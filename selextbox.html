@@ -1,0 +1,18 @@
+<div class="btn-group selectbox">
+	<input type="hidden" name="selextboxvalue" ng-model="q">	
+  	<div class="btn btn-default btn-block togglerdiv" ng-click="dropdown($event)" >  	
+	  	<div class="tagsWrapper"></div>
+	  	<span class="title">{{title}}</span>	
+		<img src="app/images/loading.gif" ng-style="{display:showloading?'initial':'none'}"  alt="loading ...">
+		<span class="caret"></span>
+  	</div>
+  	<ul class="dropdown-menu" ng-style="{display:status.isopen?'initial':'none'}" role="menu">
+		<input id="selectboxinput" placeholder="{{searchPlaceholder}}" ng-keyup="search($event)" ng-model="q" type="text" class="form-control">
+		<div class="selectbox-result">
+			<li ng-click="addItem(cat)" id="{{$index}}" ng-repeat="cat in cats">
+	          <a href  ng-bind-html="cat.cat"></a>
+	        </li>
+		</div>
+	</ul>
+</div>
+
